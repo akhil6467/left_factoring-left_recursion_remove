@@ -3,8 +3,11 @@
 using namespace std;
 int main()
 {  
-    string ip,op1,op2,temp;
-    string output1,output2,input,temporary;
+    string ip,op1,op2,temp;  //for left-factoring
+    string output1,output2,input; //for left-recursion
+    
+    //common code starts here
+    
     int sizes[10] = {};
     char c;
     int n,j,l;
@@ -26,13 +29,15 @@ int main()
             ip += "|";
     }
     cout<<"Production Rule : "<<ip<<endl;
+    // common code ends here
+    
     input=ip;
     output1=op1;
     output2=op2;
     char x = ip[3];
-
-    temporary=temp;
-
+    
+    //code for left factoring
+    
     for(int i=0,k=3;i<n;i++)
     {
         if(x == ip[k])
